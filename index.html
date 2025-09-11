@@ -35,7 +35,7 @@ header{text-align:center;padding:20px;}
 <div class="overlay" id="overlay"></div>
 <div id="detail-popup"><h2 id="dp-title"></h2><p id="dp-platform"></p><p id="dp-price"></p><a id="dp-link" target="_blank">Mua ngay</a><br><button onclick="closePopup()">Đóng</button></div>
 <script>
-let products=[{"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Shopee", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}];
+let products=[];
 function renderProducts(products){
   let list=document.getElementById("product-list");
   list.innerHTML="";
