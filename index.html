@@ -1,173 +1,56 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
 <title>Affiliate Shop</title>
-<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:sans-serif;background:#f4f6f9;}
+header{text-align:center;padding:20px;}
+#product-list{display:flex;flex-wrap:wrap;justify-content:center;}
+.product{background:white;margin:10px;padding:10px;border-radius:10px;width:220px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.product img{max-width:100%;border-radius:8px;}
+.product h3{font-size:16px;margin:5px 0;}
+.product p{margin:5px 0;}
+.product a{display:block;text-align:center;background:#ff6b6b;color:white;padding:8px;border-radius:8px;text-decoration:none;}
+</style>
 </head>
 <body>
-<div class="container">
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <h1>Affiliate Shop</h1>
-      </div>
-      <div class="controls">
-        <input id="searchBox" type="text" placeholder="🔍 Tìm sản phẩm...">
-        <select id="platformFilter">
-          <option value="all">Tất cả</option>
-          <option value="Amazon">Amazon</option>
-          <option value="Shopee">Shopee</option>
-          <option value="Lazada">Lazada</option>
-          <option value="TikTok">TikTok</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <main id="product-list">
-    
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Amazon</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Amazon</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Shopee</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Shopee</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Lazada</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Lazada</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">TikTok</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">TikTok</span>
-    <div class="title">Tên mới</div>
-    <div class="price">$0</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Amazon</span>
-    <div class="title">Tên mới</div>
-    <div class="price">Liên hệ</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
-</div>
-
-  </main>
-
-  <div class="footer-note">© 2025 Affiliate Shop — Demo</div>
-</div>
-
+<header>
+<h1>Affiliate Shop</h1>
+<select id="platformFilter">
+<option value="all">Tất cả</option>
+<option value="Amazon">Amazon</option>
+<option value="Shopee">Shopee</option>
+<option value="Lazada">Lazada</option>
+<option value="TikTok">TikTok</option>
+</select>
+<input type="text" id="searchBox" placeholder="🔍 Tìm sản phẩm...">
+</header>
+<div id="product-list"></div>
 <script>
-(function(){
-  const searchBox = document.getElementById('searchBox');
-  const platformFilter = document.getElementById('platformFilter');
-  function filterUI(){
-    const q = searchBox.value.toLowerCase();
-    const pf = platformFilter.value;
-    const products = Array.from(document.querySelectorAll('.product'));
-    products.forEach(card => {
-      const title = card.querySelector('.title').textContent.toLowerCase();
-      const platform = card.querySelector('.platform-badge').textContent;
-      const ok = (pf==='all' || platform===pf) && title.includes(q);
-      card.style.display = ok ? 'flex' : 'none';
-    });
-  }
-  searchBox.addEventListener('input', filterUI);
-  platformFilter.addEventListener('change', filterUI);
-})();
+let products=[{"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Shopee", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Shopee", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Lazada", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Lazada", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "TikTok", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "TikTok", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}, {"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "Li\u00ean h\u1ec7", "url": "https://", "image": "https://via.placeholder.com/400x300?text=No+Image", "id_api": "", "short_desc": "", "description": ""}, {"platform": "Amazon", "title": "T\u00ean m\u1edbi", "price": "$0", "url": "https://", "image": "https://", "id_api": ""}];
+function renderProducts(products){
+  let list=document.getElementById("product-list");
+  list.innerHTML="";
+  products.forEach(p=>{
+    let div=document.createElement("div");
+    div.className="product";
+    div.innerHTML=`<img src='${p.image}'><h3>${p.title}</h3><p>${p.platform}</p><p>${p.price}</p><a href='${p.url}' target='_blank'>Mua ngay</a>`;
+    list.appendChild(div);
+  });
+}
+renderProducts(products);
+let searchBox=document.getElementById("searchBox");
+let platformFilter=document.getElementById("platformFilter");
+function filter(){
+  let keyword=searchBox.value.toLowerCase();
+  let platform=platformFilter.value;
+  let filtered=products.filter(p=>(platform==="all"||p.platform===platform)&&p.title.toLowerCase().includes(keyword));
+  renderProducts(filtered);
+}
+searchBox.addEventListener("input",filter);
+platformFilter.addEventListener("change",filter);
 </script>
 </body>
 </html>
