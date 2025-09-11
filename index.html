@@ -1,51 +1,34 @@
-<!doctype html>
-<html lang="vi">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Affiliate Shop</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <h1>Affiliate Shop</h1>
-      </div>
-      <div class="controls">
-        <input id="searchBox" type="text" placeholder="🔍 Tìm sản phẩm...">
-        <select id="platformFilter">
-          <option value="all">Tất cả</option>
-          <option value="Amazon">Amazon</option>
-          <option value="Shopee">Shopee</option>
-          <option value="Lazada">Lazada</option>
-          <option value="TikTok">TikTok</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <main id="product-list">
-    
+<!doctype html><html lang="vi"><head>
+<meta charset="utf-8"><title>Affiliate Shop</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="container">
+<header><div class="header-inner">
+<div class="brand"><h1>Affiliate Shop</h1></div>
+<div class="controls">
+<input id="searchBox" type="text" placeholder="🔍 Tìm sản phẩm...">
+<select id="platformFilter">
+<option value="all">Tất cả</option>
+<option value="Amazon">Amazon</option>
+<option value="Shopee">Shopee</option>
+<option value="Lazada">Lazada</option>
+<option value="TikTok">TikTok</option>
+</select>
+</div></div></header>
+<main id="product-list">
 <div class="product">
-  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image" alt="Tên mới"></div>
+  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image" alt="áo quần nam"></div>
   <div class="body">
-    <span class="platform-badge">Amazon</span>
-    <div class="title">Tên mới</div>
-    <div class="price">Liên hệ</div>
+    <span class="platform-badge">TikTok</span>
+    <div class="title">áo quần nam</div>
+    <div class="price">$20</div>
     <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
+      <a class="btn detail" href="product_ao-quan-nam.html">Xem chi tiết</a>
+      <a class="btn buy" href="https://" target="_blank">Mua ngay</a>
     </div>
   </div>
 </div>
-
-  </main>
-
-  <div class="footer-note">© 2025 Affiliate Shop — Demo</div>
-</div>
-
+</main>
+<div class="footer-note">© 2025</div></div>
 <script>
 (function(){
   const searchBox = document.getElementById('searchBox');
@@ -64,6 +47,4 @@
   searchBox.addEventListener('input', filterUI);
   platformFilter.addEventListener('change', filterUI);
 })();
-</script>
-</body>
-</html>
+</script></body></html>
