@@ -1,95 +1,26 @@
-<!doctype html>
-<html lang="vi">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Affiliate Shop</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><title>Shop</title></head>
 <body>
-<div class="container">
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <h1>Affiliate Shop</h1>
-      </div>
-      <div class="controls">
-        <input id="searchBox" type="text" placeholder="🔍 Tìm sản phẩm...">
-        <select id="platformFilter">
-          <option value="all">Tất cả</option>
-          <option value="Amazon">Amazon</option>
-          <option value="Shopee">Shopee</option>
-          <option value="Lazada">Lazada</option>
-          <option value="TikTok">TikTok</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <main id="product-list">
-    
 <div class="product">
-  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Amazon</span>
-    <div class="title">Tên mới</div>
-    <div class="price">Liên hệ</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
+<img src="https://via.placeholder.com/400x300?text=No+Image" width="200"><h3>Tên mới</h3><p>Liên hệ</p>
+<a href="product_ten-moi.html">Xem chi tiết</a> | 
+<a href="https://" target="_blank">Mua ngay</a>
 </div>
 
 <div class="product">
-  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Amazon</span>
-    <div class="title">Tên mới</div>
-    <div class="price">Liên hệ</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
+<img src="https://via.placeholder.com/400x300?text=No+Image" width="200"><h3>Tên mới</h3><p>Liên hệ</p>
+<a href="product_ten-moi.html">Xem chi tiết</a> | 
+<a href="https://" target="_blank">Mua ngay</a>
 </div>
 
 <div class="product">
-  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image" alt="Tên mới"></div>
-  <div class="body">
-    <span class="platform-badge">Amazon</span>
-    <div class="title">Tên mới</div>
-    <div class="price">Liên hệ</div>
-    <div class="actions">
-      <a class="btn detail" href="product_ten-moi.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://" target="_blank" rel="noopener">Mua ngay</a>
-    </div>
-  </div>
+<img src="https://via.placeholder.com/400x300?text=No+Image" width="200"><h3>Tên mới</h3><p>Liên hệ</p>
+<a href="product_ten-moi.html">Xem chi tiết</a> | 
+<a href="https://" target="_blank">Mua ngay</a>
 </div>
 
-  </main>
-
-  <div class="footer-note">© 2025 Affiliate Shop — Demo</div>
+<div class="product">
+<img src="https://via.placeholder.com/400x300?text=No+Image" width="200"><h3>Tên mới</h3><p>Liên hệ</p>
+<a href="product_ten-moi.html">Xem chi tiết</a> | 
+<a href="https://" target="_blank">Mua ngay</a>
 </div>
-
-<script>
-(function(){
-  const searchBox = document.getElementById('searchBox');
-  const platformFilter = document.getElementById('platformFilter');
-  function filterUI(){
-    const q = searchBox.value.toLowerCase();
-    const pf = platformFilter.value;
-    const products = Array.from(document.querySelectorAll('.product'));
-    products.forEach(card => {
-      const title = card.querySelector('.title').textContent.toLowerCase();
-      const platform = card.querySelector('.platform-badge').textContent;
-      const ok = (pf==='all' || platform===pf) && title.includes(q);
-      card.style.display = ok ? 'flex' : 'none';
-    });
-  }
-  searchBox.addEventListener('input', filterUI);
-  platformFilter.addEventListener('change', filterUI);
-})();
-</script>
-</body>
-</html>
+</body></html>
