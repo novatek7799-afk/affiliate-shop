@@ -1,35 +1,63 @@
-
-<!doctype html><html><head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="style.css">
-</head><body>
-<div class="container">
-<div>
-  <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m9zm0mz8o4yiab.webp"></div>
-  <h4>BÀN GAMEING</h4>
-  <b>599K</b><br>
-  <a href="product_00001.html">Xem chi tiết</a>
+<!doctype html><html lang="vi"><head>
+<meta charset="utf-8"><title>Affiliate Shop</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="container">
+<header><div class="header-inner">
+<div class="brand"><h1>Affiliate Shop</h1></div>
+<div class="controls">
+<input id="searchBox" type="text" placeholder="🔍 Tìm sản phẩm...">
+<select id="platformFilter">
+<option value="all">Tất cả</option>
+<option value="Amazon">Amazon</option>
+<option value="Shopee">Shopee</option>
+<option value="Lazada">Lazada</option>
+<option value="TikTok">TikTok</option>
+</select>
+</div></div></header>
+<main id="product-list">
+<div class="product">
+  <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m9zm0mz8o4yiab.webp" alt="BÀN GAMEING"></div>
+  <div class="body">
+    <span class="platform-badge">Shopee</span>
+    <div class="title">BÀN GAMEING</div>
+    <div class="price">599K</div>
+    <div class="actions">
+      <a class="btn detail" href="product_00001.html">Xem chi tiết</a>
+      <a class="btn buy" href="https://s.shopee.vn/qe4NYPszV" target="_blank">Mua ngay</a>
+    </div>
+  </div>
 </div>
 
-<div>
-  <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m1xp6at2l4u796.webp"></div>
-  <h4>Chuột gaming không dây bluetooth sạc pin Sidotech Inphic PM6 cho game thủ chơi game chuyên nghiệp kết nối Wireless 2.4G</h4>
-  <b>164k</b><br>
-  <a href="product_00002.html">Xem chi tiết</a>
+<div class="product">
+  <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m1xp6at2l4u796.webp" alt="Chuột gaming không dây bluetooth sạc pin Sidotech Inphic PM6 cho game thủ chơi game chuyên nghiệp kết nối Wireless 2.4G"></div>
+  <div class="body">
+    <span class="platform-badge">Shopee</span>
+    <div class="title">Chuột gaming không dây bluetooth sạc pin Sidotech Inphic PM6 cho game thủ chơi game chuyên nghiệp kết nối Wireless 2.4G</div>
+    <div class="price">164k</div>
+    <div class="actions">
+      <a class="btn detail" href="product_00002.html">Xem chi tiết</a>
+      <a class="btn buy" href="https://s.shopee.vn/807EvMr6iD" target="_blank">Mua ngay</a>
+    </div>
+  </div>
 </div>
-
-<div>
-  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image"></div>
-  <h4>Tên mới</h4>
-  <b>Liên hệ</b><br>
-  <a href="product_ten-moi.html">Xem chi tiết</a>
-</div>
-
-<div>
-  <div class="media"><img src="https://via.placeholder.com/400x300?text=No+Image"></div>
-  <h4>Tên mới</h4>
-  <b>Liên hệ</b><br>
-  <a href="product_ten-moi.html">Xem chi tiết</a>
-</div>
-</div>
-</body></html>
+</main>
+<div class="footer-note">© 2026</div></div>
+<script>
+(function(){
+  const searchBox = document.getElementById('searchBox');
+  const platformFilter = document.getElementById('platformFilter');
+  function filterUI(){
+    const q = searchBox.value.toLowerCase();
+    const pf = platformFilter.value;
+    const products = Array.from(document.querySelectorAll('.product'));
+    products.forEach(card => {
+      const title = card.querySelector('.title').textContent.toLowerCase();
+      const platform = card.querySelector('.platform-badge').textContent;
+      const ok = (pf==='all' || platform===pf) && title.includes(q);
+      card.style.display = ok ? 'flex' : 'none';
+    });
+  }
+  searchBox.addEventListener('input', filterUI);
+  platformFilter.addEventListener('change', filterUI);
+})();
+</script></body></html>
