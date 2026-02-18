@@ -98,22 +98,26 @@
     });
   }
 
-  // ===== Suggestion Box Style =====
-  const suggestionBox = document.createElement('div');
-  suggestionBox.style.position = 'absolute';
-  suggestionBox.style.background = '#ffffff';
-  suggestionBox.style.border = '1px solid #e5e7eb';
-  suggestionBox.style.borderRadius = '8px';
-  suggestionBox.style.marginTop = '6px';  // cách input 1 chút
-  suggestionBox.style.width = searchBox.offsetWidth + 'px';
-  suggestionBox.style.maxHeight = '220px';
-  suggestionBox.style.overflowY = 'auto';
-  suggestionBox.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
-  suggestionBox.style.zIndex = '9999';
-  suggestionBox.style.display = 'none';
+// ===== Suggestion Box Style =====
+const suggestionBox = document.createElement('div');
+suggestionBox.style.position = 'absolute';
+suggestionBox.style.background = '#ffffff';
+suggestionBox.style.border = '1px solid #e5e7eb';
+suggestionBox.style.borderRadius = '8px';
+suggestionBox.style.width = searchBox.offsetWidth + 'px';
+suggestionBox.style.maxHeight = '220px';
+suggestionBox.style.overflowY = 'auto';
+suggestionBox.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
+suggestionBox.style.zIndex = '9999';
+suggestionBox.style.display = 'none';
 
-  searchBox.parentNode.style.position = 'relative';
-  searchBox.parentNode.appendChild(suggestionBox);
+// 👇 QUAN TRỌNG
+searchBox.parentNode.style.position = 'relative';
+suggestionBox.style.top = searchBox.offsetHeight + 6 + 'px';
+suggestionBox.style.left = '0';
+
+searchBox.parentNode.appendChild(suggestionBox);
+
 
   function showSuggestions(){
     const q = normalizeText(searchBox.value);
