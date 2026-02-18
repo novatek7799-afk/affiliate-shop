@@ -80,15 +80,12 @@
   const platformFilter = document.getElementById('platformFilter');
   const productCards = Array.from(document.querySelectorAll('.product'));
 
-  // ===== Chuẩn hóa text (bỏ dấu + lowercase) =====
   function normalizeText(text){
-    return text
-      .toLowerCase()
+    return text.toLowerCase()
       .normalize("NFD")
       .replace(/[̀-ͯ]/g, "");
   }
 
-  // ===== Lọc sản phẩm =====
   function filterUI(){
     const q = normalizeText(searchBox.value);
     const pf = platformFilter.value;
@@ -101,16 +98,20 @@
     });
   }
 
-  // ===== Tạo hộp gợi ý =====
+  // ===== Suggestion Box Style =====
   const suggestionBox = document.createElement('div');
   suggestionBox.style.position = 'absolute';
-  suggestionBox.style.background = '#fff';
-  suggestionBox.style.boxShadow = '0 6px 20px rgba(0,0,0,0.1)';
-  suggestionBox.style.borderRadius = '10px';
-  suggestionBox.style.marginTop = '5px';
+  suggestionBox.style.background = '#ffffff';
+  suggestionBox.style.border = '1px solid #e5e7eb';
+  suggestionBox.style.borderRadius = '8px';
+  suggestionBox.style.marginTop = '6px';  // cách input 1 chút
   suggestionBox.style.width = searchBox.offsetWidth + 'px';
-  suggestionBox.style.zIndex = '999';
+  suggestionBox.style.maxHeight = '220px';
+  suggestionBox.style.overflowY = 'auto';
+  suggestionBox.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
+  suggestionBox.style.zIndex = '9999';
   suggestionBox.style.display = 'none';
+
   searchBox.parentNode.style.position = 'relative';
   searchBox.parentNode.appendChild(suggestionBox);
 
@@ -126,7 +127,7 @@
     const matches = productCards
       .map(card => card.querySelector('.title').textContent)
       .filter(title => normalizeText(title).includes(q))
-      .slice(0,5);
+      .slice(0,6);
 
     if(matches.length === 0){
       suggestionBox.style.display = 'none';
@@ -136,14 +137,16 @@
     matches.forEach(title => {
       const item = document.createElement('div');
       item.textContent = title;
-      item.style.padding = '8px 12px';
+      item.style.padding = '10px 14px';
       item.style.cursor = 'pointer';
+      item.style.color = '#000000';      // chữ đen
+      item.style.fontSize = '14px';
 
       item.addEventListener('mouseover', () => {
-        item.style.background = '#f1f5ff';
+        item.style.background = '#f3f4f6';
       });
       item.addEventListener('mouseout', () => {
-        item.style.background = '#fff';
+        item.style.background = '#ffffff';
       });
 
       item.addEventListener('click', () => {
