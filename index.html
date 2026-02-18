@@ -119,51 +119,74 @@ suggestionBox.style.left = '0';
 searchBox.parentNode.appendChild(suggestionBox);
 
 
-  function showSuggestions(){
-    const q = normalizeText(searchBox.value);
-    suggestionBox.innerHTML = '';
+function showSuggestions(){
+  const q = normalizeText(searchBox.value);
+  suggestionBox.innerHTML = '';
 
-    if(!q){
-      suggestionBox.style.display = 'none';
-      return;
-    }
+  if(!q){
+    suggestionBox.style.display = 'none';
+    return;
+  }
 
-    const matches = productCards
-      .map(card => card.querySelector('.title').textContent)
-      .filter(title => normalizeText(title).includes(q))
-      .slice(0,6);
+  const matches = productCards
+    .filter(card => {
+      const title = normalizeText(card.querySelector('.title').textContent);
+      return title.includes(q);
+    })
+    .slice(0,6);
 
-    if(matches.length === 0){
-      suggestionBox.style.display = 'none';
-      return;
-    }
+  if(matches.length === 0){
+    suggestionBox.style.display = 'none';
+    return;
+  }
 
-    matches.forEach(title => {
-      const item = document.createElement('div');
-      item.textContent = title;
-      item.style.padding = '10px 14px';
-      item.style.cursor = 'pointer';
-      item.style.color = '#000000';      // chữ đen
-      item.style.fontSize = '14px';
+  matches.forEach(card => {
+    const title = card.querySelector('.title').textContent;
+    const img = card.querySelector('img')?.src || '';
 
-      item.addEventListener('mouseover', () => {
-        item.style.background = '#f3f4f6';
-      });
-      item.addEventListener('mouseout', () => {
-        item.style.background = '#ffffff';
-      });
+    const item = document.createElement('div');
+    item.style.display = 'flex';
+    item.style.alignItems = 'center';
+    item.style.padding = '8px 12px';
+    item.style.cursor = 'pointer';
+    item.style.gap = '10px';
 
-      item.addEventListener('click', () => {
-        searchBox.value = title;
-        suggestionBox.style.display = 'none';
-        filterUI();
-      });
-
-      suggestionBox.appendChild(item);
+    item.addEventListener('mouseover', () => {
+      item.style.background = '#f3f4f6';
+    });
+    item.addEventListener('mouseout', () => {
+      item.style.background = '#ffffff';
     });
 
-    suggestionBox.style.display = 'block';
-  }
+    item.addEventListener('click', () => {
+      searchBox.value = title;
+      suggestionBox.style.display = 'none';
+      filterUI();
+    });
+
+    // Ảnh
+    const imgEl = document.createElement('img');
+    imgEl.src = img;
+    imgEl.style.width = '40px';
+    imgEl.style.height = '40px';
+    imgEl.style.objectFit = 'cover';
+    imgEl.style.borderRadius = '6px';
+
+    // Text
+    const textEl = document.createElement('div');
+    textEl.textContent = title;
+    textEl.style.color = '#000';
+    textEl.style.fontSize = '14px';
+
+    item.appendChild(imgEl);
+    item.appendChild(textEl);
+
+    suggestionBox.appendChild(item);
+  });
+
+  suggestionBox.style.display = 'block';
+}
+
 
   searchBox.addEventListener('input', () => {
     filterUI();
