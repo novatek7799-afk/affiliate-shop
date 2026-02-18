@@ -78,18 +78,98 @@
 (function(){
   const searchBox = document.getElementById('searchBox');
   const platformFilter = document.getElementById('platformFilter');
+  const productCards = Array.from(document.querySelectorAll('.product'));
+
+  // ===== Chuẩn hóa text (bỏ dấu + lowercase) =====
+  function normalizeText(text){
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "");
+  }
+
+  // ===== Lọc sản phẩm =====
   function filterUI(){
-    const q = searchBox.value.toLowerCase();
+    const q = normalizeText(searchBox.value);
     const pf = platformFilter.value;
-    const products = Array.from(document.querySelectorAll('.product'));
-    products.forEach(card => {
-      const title = card.querySelector('.title').textContent.toLowerCase();
+
+    productCards.forEach(card => {
+      const title = normalizeText(card.querySelector('.title').textContent);
       const platform = card.querySelector('.platform-badge').textContent;
       const ok = (pf==='all' || platform===pf) && title.includes(q);
       card.style.display = ok ? 'flex' : 'none';
     });
   }
-  searchBox.addEventListener('input', filterUI);
+
+  // ===== Tạo hộp gợi ý =====
+  const suggestionBox = document.createElement('div');
+  suggestionBox.style.position = 'absolute';
+  suggestionBox.style.background = '#fff';
+  suggestionBox.style.boxShadow = '0 6px 20px rgba(0,0,0,0.1)';
+  suggestionBox.style.borderRadius = '10px';
+  suggestionBox.style.marginTop = '5px';
+  suggestionBox.style.width = searchBox.offsetWidth + 'px';
+  suggestionBox.style.zIndex = '999';
+  suggestionBox.style.display = 'none';
+  searchBox.parentNode.style.position = 'relative';
+  searchBox.parentNode.appendChild(suggestionBox);
+
+  function showSuggestions(){
+    const q = normalizeText(searchBox.value);
+    suggestionBox.innerHTML = '';
+
+    if(!q){
+      suggestionBox.style.display = 'none';
+      return;
+    }
+
+    const matches = productCards
+      .map(card => card.querySelector('.title').textContent)
+      .filter(title => normalizeText(title).includes(q))
+      .slice(0,5);
+
+    if(matches.length === 0){
+      suggestionBox.style.display = 'none';
+      return;
+    }
+
+    matches.forEach(title => {
+      const item = document.createElement('div');
+      item.textContent = title;
+      item.style.padding = '8px 12px';
+      item.style.cursor = 'pointer';
+
+      item.addEventListener('mouseover', () => {
+        item.style.background = '#f1f5ff';
+      });
+      item.addEventListener('mouseout', () => {
+        item.style.background = '#fff';
+      });
+
+      item.addEventListener('click', () => {
+        searchBox.value = title;
+        suggestionBox.style.display = 'none';
+        filterUI();
+      });
+
+      suggestionBox.appendChild(item);
+    });
+
+    suggestionBox.style.display = 'block';
+  }
+
+  searchBox.addEventListener('input', () => {
+    filterUI();
+    showSuggestions();
+  });
+
   platformFilter.addEventListener('change', filterUI);
+
+  document.addEventListener('click', (e) => {
+    if(!searchBox.contains(e.target)){
+      suggestionBox.style.display = 'none';
+    }
+  });
+
 })();
 </script></body></html>
