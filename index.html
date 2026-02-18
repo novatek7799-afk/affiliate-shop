@@ -1,205 +1,238 @@
-<!doctype html><html lang="vi"><head>
-<meta charset="utf-8"><title>muasam.com</title>
 
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <!doctype html>
+    <html lang="vi">
+    <head>
+    <meta charset="utf-8">
+    <title>muasam.com</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div class="container">
 
-<meta name="theme-color" content="#667eea">
-<link rel="stylesheet" href="style.css"></head>
-<body><div class="container">
-<header><div class="header-inner">
-<div class="brand"><h1>muasam.com</h1></div>
-<div class="controls">
-<input id="searchBox" type="text" placeholder="🔍 Tìm sản phẩm...">
-<select id="platformFilter">
-<option value="all">Tất cả</option>
-<option value="Amazon">Amazon</option>
-<option value="Shopee">Shopee</option>
-<option value="Lazada">Lazada</option>
-<option value="TikTok">TikTok</option>
-</select>
-</div></div></header>
-<main id="product-list">
-<div class="product">
-  <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m9zm0mz8o4yiab.webp" alt="BÀN GAMEING"></div>
-  <div class="body">
-    <span class="platform-badge">Shopee</span>
-    <div class="title">BÀN GAMEING</div>
-    <div class="price">599K</div>
-    <div class="actions">
-      <a class="btn detail" href="product_00001.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://s.shopee.vn/qe4NYPszV" target="_blank">Mua ngay</a>
+    <header>
+    <div class="header-inner">
+    <div><h1>muasam.com</h1></div>
+    <div class="controls">
+    <input id="searchBox" placeholder="🔍 Tìm sản phẩm...">
+    <select id="platformFilter">
+    <option value="all">Tất cả</option>
+    <option value="Amazon">Amazon</option>
+    <option value="Shopee">Shopee</option>
+    <option value="Lazada">Lazada</option>
+    <option value="TikTok">TikTok</option>
+    </select>
+    <select id="sortSelect">
+    <option value="default">Sắp xếp</option>
+    <option value="views">Lượt xem cao nhất</option>
+    <option value="likes">Lượt thích cao nhất</option>
+    </select>
     </div>
-  </div>
-</div>
-
-<div class="product">
-  <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m1xp6at2l4u796.webp" alt="Chuột gaming không dây bluetooth sạc pin Sidotech Inphic PM6 cho game thủ chơi game chuyên nghiệp kết nối Wireless 2.4G"></div>
-  <div class="body">
-    <span class="platform-badge">Shopee</span>
-    <div class="title">Chuột gaming không dây bluetooth sạc pin Sidotech Inphic PM6 cho game thủ chơi game chuyên nghiệp kết nối Wireless 2.4G</div>
-    <div class="price">164k</div>
-    <div class="actions">
-      <a class="btn detail" href="product_00002.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://s.shopee.vn/807EvMr6iD" target="_blank">Mua ngay</a>
     </div>
-  </div>
-</div>
+    </header>
 
-<div class="product">
-  <div class="media"><img src="https://down-zl-vn.img.susercontent.com/vn-11134207-7ras8-m4bifnoyfl5b05.webp" alt="Dép sục nữ charm đá Ngẫu Nhiên đế 8cm bản mới, Sục nữ đế cao phong cách năng động chất liệu eva Shoes"></div>
-  <div class="body">
-    <span class="platform-badge">Shopee</span>
-    <div class="title">Dép sục nữ charm đá Ngẫu Nhiên đế 8cm bản mới, Sục nữ đế cao phong cách năng động chất liệu eva Shoes</div>
-    <div class="price">65k</div>
-    <div class="actions">
-      <a class="btn detail" href="product_00003.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://s.shopee.vn/5q2kONSdYO" target="_blank">Mua ngay</a>
+    <div class="stats-bar">
+    Tổng lượt xem toàn site: <b id="totalViews">0</b> |
+    Top sản phẩm hot nhất: <span id="topHot">Đang tính...</span>
     </div>
-  </div>
-</div>
 
-<div class="product">
-  <div class="media"><img src="https://down-zl-vn.img.susercontent.com/vn-11134207-81ztc-mk4oa728rqpv69.webp" alt="Máy sấy tóc mini CWell gấp gọn 2 chiều nóng lạnh C01HD, công suất 1200W, ánh sáng xanh bảo vệ tóc"></div>
-  <div class="body">
-    <span class="platform-badge">Shopee</span>
-    <div class="title">Máy sấy tóc mini CWell gấp gọn 2 chiều nóng lạnh C01HD, công suất 1200W, ánh sáng xanh bảo vệ tóc</div>
-    <div class="price">119k</div>
-    <div class="actions">
-      <a class="btn detail" href="product_00004.html">Xem chi tiết</a>
-      <a class="btn buy" href="https://s.shopee.vn/4AuWPPh4mu" target="_blank">Mua ngay</a>
+    <main id="product-list">
+    
+    <div class="product" data-id="00001">
+    <div class="badge-hot">🔥 HOT</div>
+    <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m9zm0mz8o4yiab.webp"></div>
+    <div class="body">
+        <span class="platform-badge">Shopee</span>
+
+        <div class="meta-bar">
+        <span class="view-btn">👁 <span class="view-count">0</span></span>
+        <span class="like-btn">❤️ <span class="like-count">0</span></span>
+        </div>
+
+        <div class="title">BÀN GAMEING</div>
+        <div class="price">599K</div>
+
+        <div class="actions">
+        <a class="btn detail" href="product_00001.html">Xem chi tiết</a>
+        <a class="btn buy" href="https://s.shopee.vn/qe4NYPszV" target="_blank">Mua ngay</a>
+        </div>
     </div>
-  </div>
-</div>
-</main>
-<div class="footer-note">© 2026</div></div>
-<script>
-(function(){
-  const searchBox = document.getElementById('searchBox');
-  const platformFilter = document.getElementById('platformFilter');
-  const productCards = Array.from(document.querySelectorAll('.product'));
+    </div>
+    
+    <div class="product" data-id="00002">
+    <div class="badge-hot">🔥 HOT</div>
+    <div class="media"><img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m1xp6at2l4u796.webp"></div>
+    <div class="body">
+        <span class="platform-badge">Shopee</span>
 
-  function normalizeText(text){
-    return text.toLowerCase()
-      .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "");
-  }
+        <div class="meta-bar">
+        <span class="view-btn">👁 <span class="view-count">0</span></span>
+        <span class="like-btn">❤️ <span class="like-count">0</span></span>
+        </div>
 
-  function filterUI(){
-    const q = normalizeText(searchBox.value);
-    const pf = platformFilter.value;
+        <div class="title">Chuột gaming không dây bluetooth sạc pin Sidotech Inphic PM6 cho game thủ chơi game chuyên nghiệp kết nối Wireless 2.4G</div>
+        <div class="price">164k</div>
 
-    productCards.forEach(card => {
-      const title = normalizeText(card.querySelector('.title').textContent);
-      const platform = card.querySelector('.platform-badge').textContent;
-      const ok = (pf==='all' || platform===pf) && title.includes(q);
-      card.style.display = ok ? 'flex' : 'none';
-    });
-  }
+        <div class="actions">
+        <a class="btn detail" href="product_00002.html">Xem chi tiết</a>
+        <a class="btn buy" href="https://s.shopee.vn/807EvMr6iD" target="_blank">Mua ngay</a>
+        </div>
+    </div>
+    </div>
+    
+    <div class="product" data-id="00003">
+    <div class="badge-hot">🔥 HOT</div>
+    <div class="media"><img src="https://down-zl-vn.img.susercontent.com/vn-11134207-7ras8-m4bifnoyfl5b05.webp"></div>
+    <div class="body">
+        <span class="platform-badge">Shopee</span>
 
-// ===== Suggestion Box Style =====
-const suggestionBox = document.createElement('div');
-suggestionBox.style.position = 'absolute';
-suggestionBox.style.background = '#ffffff';
-suggestionBox.style.border = '1px solid #e5e7eb';
-suggestionBox.style.borderRadius = '8px';
-suggestionBox.style.width = searchBox.offsetWidth + 'px';
-suggestionBox.style.maxHeight = '220px';
-suggestionBox.style.overflowY = 'auto';
-suggestionBox.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
-suggestionBox.style.zIndex = '9999';
-suggestionBox.style.display = 'none';
+        <div class="meta-bar">
+        <span class="view-btn">👁 <span class="view-count">0</span></span>
+        <span class="like-btn">❤️ <span class="like-count">0</span></span>
+        </div>
 
-// 👇 QUAN TRỌNG
-searchBox.parentNode.style.position = 'relative';
-suggestionBox.style.top = searchBox.offsetHeight + 6 + 'px';
-suggestionBox.style.left = '0';
+        <div class="title">Dép sục nữ charm đá Ngẫu Nhiên đế 8cm bản mới, Sục nữ đế cao phong cách năng động chất liệu eva Shoes</div>
+        <div class="price">65k</div>
 
-searchBox.parentNode.appendChild(suggestionBox);
+        <div class="actions">
+        <a class="btn detail" href="product_00003.html">Xem chi tiết</a>
+        <a class="btn buy" href="https://s.shopee.vn/5q2kONSdYO" target="_blank">Mua ngay</a>
+        </div>
+    </div>
+    </div>
+    
+    <div class="product" data-id="00004">
+    <div class="badge-hot">🔥 HOT</div>
+    <div class="media"><img src="https://down-zl-vn.img.susercontent.com/vn-11134207-81ztc-mk4oa728rqpv69.webp"></div>
+    <div class="body">
+        <span class="platform-badge">Shopee</span>
 
+        <div class="meta-bar">
+        <span class="view-btn">👁 <span class="view-count">0</span></span>
+        <span class="like-btn">❤️ <span class="like-count">0</span></span>
+        </div>
 
-function showSuggestions(){
-  const q = normalizeText(searchBox.value);
-  suggestionBox.innerHTML = '';
+        <div class="title">Máy sấy tóc mini CWell gấp gọn 2 chiều nóng lạnh C01HD, công suất 1200W, ánh sáng xanh bảo vệ tóc</div>
+        <div class="price">119k</div>
 
-  if(!q){
-    suggestionBox.style.display = 'none';
-    return;
-  }
+        <div class="actions">
+        <a class="btn detail" href="product_00004.html">Xem chi tiết</a>
+        <a class="btn buy" href="https://s.shopee.vn/4AuWPPh4mu" target="_blank">Mua ngay</a>
+        </div>
+    </div>
+    </div>
+    
+    </main>
 
-  const matches = productCards
-    .filter(card => {
-      const title = normalizeText(card.querySelector('.title').textContent);
-      return title.includes(q);
-    })
-    .slice(0,6);
+    <div class="footer-note">© 2026</div>
+    </div>
 
-  if(matches.length === 0){
-    suggestionBox.style.display = 'none';
-    return;
-  }
+    <script>
+    (function(){
+    const searchBox=document.getElementById("searchBox");
+    const platformFilter=document.getElementById("platformFilter");
+    const sortSelect=document.getElementById("sortSelect");
+    const productList=document.getElementById("product-list");
+    let productCards=[...document.querySelectorAll(".product")];
 
-  matches.forEach(card => {
-    const title = card.querySelector('.title').textContent;
-    const img = card.querySelector('img')?.src || '';
+    function normalize(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
 
-    const item = document.createElement('div');
-    item.style.display = 'flex';
-    item.style.alignItems = 'center';
-    item.style.padding = '8px 12px';
-    item.style.cursor = 'pointer';
-    item.style.gap = '10px';
+    function updateStats(){
+    let total=0;
+    let topProduct=null;
+    let maxLikes=0;
 
-    item.addEventListener('mouseover', () => {
-      item.style.background = '#f3f4f6';
-    });
-    item.addEventListener('mouseout', () => {
-      item.style.background = '#ffffff';
+    productCards.forEach(card=>{
+        const id=card.dataset.id;
+        const views=parseInt(localStorage.getItem("view_"+id))||0;
+        const likes=parseInt(localStorage.getItem("like_"+id))||0;
+
+        total+=views;
+
+        if(likes>=20) card.querySelector(".badge-hot").style.display="block";
+
+        if(likes>maxLikes){
+        maxLikes=likes;
+        topProduct=card.querySelector(".title").textContent;
+        }
     });
 
-    item.addEventListener('click', () => {
-      searchBox.value = title;
-      suggestionBox.style.display = 'none';
-      filterUI();
-    });
-
-    // Ảnh
-    const imgEl = document.createElement('img');
-    imgEl.src = img;
-    imgEl.style.width = '40px';
-    imgEl.style.height = '40px';
-    imgEl.style.objectFit = 'cover';
-    imgEl.style.borderRadius = '6px';
-
-    // Text
-    const textEl = document.createElement('div');
-    textEl.textContent = title;
-    textEl.style.color = '#000';
-    textEl.style.fontSize = '14px';
-
-    item.appendChild(imgEl);
-    item.appendChild(textEl);
-
-    suggestionBox.appendChild(item);
-  });
-
-  suggestionBox.style.display = 'block';
-}
-
-
-  searchBox.addEventListener('input', () => {
-    filterUI();
-    showSuggestions();
-  });
-
-  platformFilter.addEventListener('change', filterUI);
-
-  document.addEventListener('click', (e) => {
-    if(!searchBox.contains(e.target)){
-      suggestionBox.style.display = 'none';
+    document.getElementById("totalViews").textContent=total;
+    document.getElementById("topHot").textContent=topProduct||"Chưa có";
     }
-  });
 
-})();
-</script></body></html>
+    function sortProducts(){
+    if(sortSelect.value==="default") return;
+
+    productCards.sort((a,b)=>{
+        const idA=a.dataset.id;
+        const idB=b.dataset.id;
+
+        const viewA=parseInt(localStorage.getItem("view_"+idA))||0;
+        const viewB=parseInt(localStorage.getItem("view_"+idB))||0;
+
+        const likeA=parseInt(localStorage.getItem("like_"+idA))||0;
+        const likeB=parseInt(localStorage.getItem("like_"+idB))||0;
+
+        if(sortSelect.value==="views") return viewB-viewA;
+        if(sortSelect.value==="likes") return likeB-likeA;
+    });
+
+    productCards.forEach(card=>productList.appendChild(card));
+    }
+
+    function filterUI(){
+    const q=normalize(searchBox.value);
+    const pf=platformFilter.value;
+
+    productCards.forEach(card=>{
+        const title=normalize(card.querySelector(".title").textContent);
+        const platform=card.querySelector(".platform-badge").textContent;
+        const ok=(pf==="all"||platform===pf)&&title.includes(q);
+        card.style.display=ok?"flex":"none";
+    });
+    }
+
+    searchBox.addEventListener("input",filterUI);
+    platformFilter.addEventListener("change",filterUI);
+    sortSelect.addEventListener("change",()=>{sortProducts();updateStats();});
+
+    // ===== VIEW & LIKE =====
+    productCards.forEach(card=>{
+    const id=card.dataset.id;
+    const viewEl=card.querySelector(".view-count");
+    const likeEl=card.querySelector(".like-count");
+    const likeBtn=card.querySelector(".like-btn");
+
+    let views=parseInt(localStorage.getItem("view_"+id))||0;
+    let likes=parseInt(localStorage.getItem("like_"+id))||0;
+    let liked=localStorage.getItem("liked_"+id)==="1";
+
+    viewEl.textContent=views;
+    likeEl.textContent=likes;
+    if(liked) likeBtn.classList.add("active");
+
+    card.addEventListener("click",e=>{
+        if(e.target.closest(".like-btn")||e.target.closest(".btn")) return;
+        views++;
+        localStorage.setItem("view_"+id,views);
+        viewEl.textContent=views;
+        updateStats();
+    });
+
+    likeBtn.addEventListener("click",e=>{
+        e.stopPropagation();
+        if(liked){likes--;liked=false;likeBtn.classList.remove("active");}
+        else{likes++;liked=true;likeBtn.classList.add("active");}
+        localStorage.setItem("like_"+id,likes);
+        localStorage.setItem("liked_"+id,liked?"1":"0");
+        likeEl.textContent=likes;
+        updateStats();
+    });
+    });
+
+    updateStats();
+    })();
+    </script>
+    </body>
+    </html>
+    
